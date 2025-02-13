@@ -45,6 +45,9 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end gap-5">
+        <div>
+          {user?.email}
+        </div>
         {
           user ?
             <>
