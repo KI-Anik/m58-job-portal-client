@@ -8,7 +8,7 @@ const PrivateRoute = ({ children }) => {
     const { pathname } = useLocation() //destructure location
 
     if (loading) {
-        return <span>wait</span>
+        return <span className="loading loading-spinner text-error"></span>
     }
     if (user) {
         return children
