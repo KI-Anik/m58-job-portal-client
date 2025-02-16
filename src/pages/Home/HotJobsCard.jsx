@@ -13,7 +13,7 @@ const HotJobsCard = ({ job }) => {
                     <img
                         className='w-16'
                         src={company_logo}
-                        alt="Shoes" />
+                        alt="logo" />
                 </figure>
                 <div>
                     <h2 className="text-2xl">{company}</h2>
@@ -25,7 +25,7 @@ const HotJobsCard = ({ job }) => {
             <div className="card-body">
                 <h2 className="card-title">{title}</h2>
                 <p>{description}</p>
-                <p className='text-xl font-semibold'>Requirement:</p>
+                <p className='text-xl font-semibold'>Requirements:</p>
                 <div className='flex gap-2 flex-wrap'>
                     {
                         requirements.map((req, idx) => <p
