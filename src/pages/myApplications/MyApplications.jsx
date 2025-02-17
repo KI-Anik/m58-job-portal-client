@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import UseAuth from '../../hooks/UseAuth';
 import Swal from 'sweetalert2';
+import { Link } from 'react-router-dom';
 
 const MyApplications = () => {
     const { user } = UseAuth()
@@ -16,18 +17,14 @@ const MyApplications = () => {
 
     return (
         <div className="overflow-x-auto">
+            <h2 className="text-2xl">My application: {jobs.length}</h2>
             <table className="table">
                 {/* head */}
                 <thead>
                     <tr>
-                        <th>
-                            <label>
-                                <input type="checkbox" className="checkbox" />
-                            </label>
-                        </th>
                         <th>Name</th>
                         <th>Job</th>
-                        <th>Favorite Color</th>
+                        <th>Applications</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -55,11 +52,11 @@ const MyApplications = () => {
                                 </div>
                             </td>
                             <td>
-                                Zemlak, Daniel and Leannon
+                                {job.requirements}
                                 <br />
                                 <span className="badge badge-ghost badge-sm">Desktop Support Technician</span>
                             </td>
-                            <td>Purple</td>
+                            <td><Link to={`/viewApplication/${job.job_id}`}> <button className="btn btn-link">View application</button> </Link> </td>
                             <th>
                                 <button className="btn btn-xs">Delete</button>
                             </th>

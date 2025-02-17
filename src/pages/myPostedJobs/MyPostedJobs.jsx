@@ -15,7 +15,7 @@ const MyPostedJobs = () => {
 console.log(jobs)
     return (
         <div>
-            <h2>My posted job length: {jobs.length}</h2>
+            <h2 className='text-2xl'>My posted job : {jobs.length}</h2>
             <div className="overflow-x-auto">
             <table className="table">
                 {/* head */}
@@ -27,7 +27,7 @@ console.log(jobs)
                         <th>company Name</th>
                         <th>Job title</th>
                         <th>Location</th>
-                        <th></th>
+                        <th>Total applicant</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -39,6 +39,7 @@ console.log(jobs)
                             <td>{job.cpmpany}</td>
                            <td>{job.title}</td>
                            <td>{job.location}</td>
+                           <td>{job.applicationCount}</td>
                             <th>
                                 <button className="btn btn-xs">Delete</button>
                             </th>

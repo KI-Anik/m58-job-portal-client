@@ -74,7 +74,7 @@ const Addjob = () => {
                 </fieldset>
                 {/* company name */}
                 <label className="fieldset-label">Company name</label>
-                <input type="text" name='cpmpany' className="input" placeholder="" />
+                <input type="text" name='company' className="input" placeholder="" />
                 {/* company logo */}
                 <label className="fieldset-label">Company logo</label>
                 <input type="url" name='company_logo' className="input" placeholder="" />
