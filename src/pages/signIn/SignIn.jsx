@@ -10,17 +10,13 @@ const SignIn = () => {
     const navigate = useNavigate()
     // const location = useLocation()
     const { state } = useLocation() //destructure location
-    console.log('sign in state value is:', state)
-
     const from = state || '/'
-    console.log('from ', from)
 
     const handleSubmit = e => {
         e.preventDefault()
         const form = e.target;
         const email = form.email.value
         const password = form.password.value
-        console.log(email, password)
 
         signIn(email, password)
             .then(result => {

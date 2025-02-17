@@ -8,7 +8,6 @@ const JobApply = () => {
     const { user } = UseAuth()
         const navigate = useNavigate()
     
-    // console.log(id,user)
 
     const handleApply = e => {
         e.preventDefault()
@@ -16,7 +15,6 @@ const JobApply = () => {
         const linkedIn = form.linkedIn.value;
         const github = form.github.value;
         const resume = form.resume.value;
-        // console.log(linkedIn, github, resume)
 
         const jobApplication = {
             job_id: id,

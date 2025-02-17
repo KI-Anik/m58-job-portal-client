@@ -7,47 +7,47 @@ const MyPostedJobs = () => {
 
     useEffect(() => {
         fetch(`http://localhost:5000/jobs?email=${user?.email}`)
-        .then(res => res.json())
-        .then(data => {
-            setJobs(data)
-        })
+            .then(res => res.json())
+            .then(data => {
+                setJobs(data)
+            })
     }, [user.email])
-console.log(jobs)
+
     return (
         <div>
             <h2 className='text-2xl'>My posted job : {jobs.length}</h2>
             <div className="overflow-x-auto">
-            <table className="table">
-                {/* head */}
-                <thead>
-                    <tr>
-                        <th>
-                           
-                        </th>
-                        <th>company Name</th>
-                        <th>Job title</th>
-                        <th>Location</th>
-                        <th>Total applicant</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {
-                        jobs.map((job,idx) => <tr key={job._id}>
+                <table className="table">
+                    {/* head */}
+                    <thead>
+                        <tr>
                             <th>
-                               <td>{idx+1}</td>
+
                             </th>
-                            <td>{job.cpmpany}</td>
-                           <td>{job.title}</td>
-                           <td>{job.location}</td>
-                           <td>{job.applicationCount}</td>
-                            <th>
-                                <button className="btn btn-xs">Delete</button>
-                            </th>
-                        </tr>)
-                    }
-                </tbody>
-            </table>
-        </div>
+                            <th>company Name</th>
+                            <th>Job title</th>
+                            <th>Location</th>
+                            <th>Total applicant</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            jobs.map((job, idx) => <tr key={job._id}>
+                                <th>
+                                    <td>{idx + 1}</td>
+                                </th>
+                                <td>{job.cpmpany}</td>
+                                <td>{job.title}</td>
+                                <td>{job.location}</td>
+                                <td>{job.applicationCount}</td>
+                                <th>
+                                    <button className="btn btn-xs">Delete</button>
+                                </th>
+                            </tr>)
+                        }
+                    </tbody>
+                </table>
+            </div>
 
         </div>
     );
